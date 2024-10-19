@@ -13,9 +13,19 @@ const helpRegex = /please help|assist me/i;
 const dollarRegex = /[0-9]+\s*(?:hundred|thousand|million|billion)?\s+dollars/i;
 // console.log(dollarRegex.test('a 99 dollars'));
 
-const freeRegex = /free money/i;
+// const freeRegex = /fr[e3][e3] m[o0]n[e3]y/i;
+// const freeRegex = /\sfr[e3][e3] m[o0]n[e3]y\s/i;
+// const freeRegex = /(?:\s|^)fr[e3][e3] m[o0]n[e3]y\s/i;
+const freeRegex = /(?:^|\s)fr[e3][e3] m[o0]n[e3]y(?:$|\s)/i;
 
-const denyList = [helpRegex, dollarRegex, freeRegex]; //store the collection of spam msg
+// const stockRegex = /[s5][t7][o0]ck al[e3]r[t7]/i;
+// const stockRegex = /[s5][t7][o0]ck [a@4]l[e3]r[t7]/i;
+// const stockRegex = /[s5][t7][o0][c{[(]k [a@4]l[e3]r[t7]/i;
+const stockRegex = /(?:^|\s)[s5][t7][o0][c{[(]k [a@4]l[e3]r[t7](?:$|\s)/i;
+
+const dearRegex = /(?:^|\s)d[e3][a@4]r fr[i|1][e3]nd(?:$|\s)/i;
+
+const denyList = [helpRegex, dollarRegex, freeRegex, stockRegex, dearRegex]; //store the collection of spam msg
 
 const isSpam = (msg) => denyList.some((regex) => regex.test(msg));
 // console.log('please help'.match(helpRegex));

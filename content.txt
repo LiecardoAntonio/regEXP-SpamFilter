@@ -44,6 +44,16 @@ CONTENT:
 
   j. (NOTE) to see the difference between capturing & non-capturing group, check on the bottom of the script.js, there is a better explanation on what is the difference between them
 
+  k. '^' anchor
+  > To match the beginning of the text, you can use the ^ anchor. This asserts that your pattern match starts at the beginning of the full string.
+  >  It ensures that the pattern following the ^ is matched only if it occurs at the very beginning of the text.
+
+  l. '$' anchor
+  > you can use the $ anchor to match the end of the string.
+  >  It ensures that the pattern preceding the $ is matched only if it occurs at the very end of the text.
+
+  m. NOTE: if you combo '^' and '$' anchor, you can  allow your regex to match whole words.
+
 3. string.match(regex);
   > Strings have a .match() method, which accepts a regular expression as an argument and determines if the string matches that expression.
   > The match() method returns an array with the matches. The match() method returns null if no match is found.
